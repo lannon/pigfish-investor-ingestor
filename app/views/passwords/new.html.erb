@@ -1,0 +1,18 @@
+<div id="clearance" class="password-reset box">
+  <div class="content">
+    <span class="title" style="font-size: 12px;"><%= t(".title") %></span>
+
+    <p><%= t(".description") %></p>
+
+    <%= form_for :password, url: passwords_path do |form| %>
+      <div class="text-field input-group">
+        <%= form.label :email %>
+        <%= form.text_field :email, type: 'email' %>
+      </div>
+
+      <div class="submit-field buttons">
+        <%= form.submit class: 'btn active' %>
+      </div>
+    <% end %>
+  </div>
+</div>
