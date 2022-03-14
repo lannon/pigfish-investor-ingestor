@@ -5,4 +5,6 @@ class Investor < ApplicationRecord
   ].freeze
 
   validates *REQUIRED_ATTRIBUTES, presence: true
+
+  belongs_to :user, inverse_of: 'investors'
 end
