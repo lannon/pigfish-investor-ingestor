@@ -13,6 +13,19 @@
  *= require_tree .
  *= require_self
  */
+.notice { color: green; }
+.alert { color: red; }
+.btn {
+  color: #686868; }
+  .btn:hover, .btn.active {
+    background-color: #0a2fc4;
+    color: #ffffff; }
+  .btn::before {
+    content: "\003c\0000a0"; }
+  .btn::after {
+    content: "\0000a0\003e"; }
+
+/* CSS courtesy of https://github.com/poerror/ncurses-css */ 
 body {
   background-color: #0a2fc4;
   color: #fff;

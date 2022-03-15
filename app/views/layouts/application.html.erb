@@ -1,7 +1,7 @@
 <!DOCTYPE html>
 <html>
   <head>
-    <title>PigfishInvestorIngestor</title>
+    <title>Pigfish Investor Ingestor</title>
     <meta name="viewport" content="width=device-width,initial-scale=1">
     <%= csrf_meta_tags %>
     <%= csp_meta_tag %>
@@ -12,19 +12,20 @@
   <body>
     <header class="backtitle">
       <div class="content">
+        <div class="menu">
+        <% if signed_in? %>
+          Signed in as: <%= current_user.email %>
+          <%= button_to 'Sign out', sign_out_path, method: :delete, class: 'btn active' %>
+        <% else %>
+          <%= link_to 'Sign in', sign_in_path, class: 'btn active' %>
+        <% end %>
+        </div>
+
         <div id="flash">
         <% flash.each do |key, value| %>
           <div class="flash <%= key %>"><%= value %></div>
         <% end %>
         </div> 
-        <div class="menu">
-        <% if signed_in? %>
-          Signed in as: <%= current_user.email %>
-          <%= button_to 'Sign out', sign_out_path, method: :delete, class: 'btn' %>
-        <% else %>
-          <%= link_to 'Sign in', sign_in_path, class: 'btn' %>
-        <% end %>
-        </div>
       </div>
     </header>
 

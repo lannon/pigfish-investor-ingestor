@@ -1,0 +1,81 @@
+<div class="new-investor box">
+  <div class="content">
+    <span class="title">New Investor</span>
+
+    <%= form_for @investor do |form| %>
+      <div class="text-field input-group">
+        <%= form.label :first_name %>
+        <%= form.text_field :first_name %>
+        <% @investor.errors.full_messages_for(:first_name).each do |msg| %>
+          <div class="alert"><%= msg %></div>
+        <% end %>
+      </div>
+      <div class="text-field input-group">
+        <%= form.label :last_name %>
+        <%= form.text_field :last_name %>
+        <% @investor.errors.full_messages_for(:last_name).each do |msg| %>
+          <div class="alert"><%= msg %></div>
+        <% end %>
+      </div>
+      <div class="text-field input-group">
+        <%= form.label :date_of_birth %>
+        <br />
+        <%=
+          form.date_select(
+            :date_of_birth,
+            start_year: Date.current.year - 100,
+            end_year: Date.current.year)
+        %>
+        <% @investor.errors.full_messages_for(:date_of_birth).each do |msg| %>
+          <div class="alert"><%= msg %></div>
+        <% end %>
+      </div>
+      <div class="text-field input-group">
+        <%= form.label :phone_number %>
+        <%= form.telephone_field :phone_number %>
+        <% @investor.errors.full_messages_for(:phone_number).each do |msg| %>
+          <div class="alert"><%= msg %></div>
+        <% end %>
+      </div>
+      <div class="text-field input-group">
+        <%= form.label :social_security_number %>
+        <%= form.text_field :social_security_number %>
+        <% @investor.errors.full_messages_for(:social_security_number).each do |msg| %>
+          <div class="alert"><%= msg %></div>
+        <% end %>
+      </div>
+      <div class="text-field input-group">
+        <%= form.label :address_street %>
+        <%= form.text_field :address_street %>
+        <% @investor.errors.full_messages_for(:address_street).each do |msg| %>
+          <div class="alert"><%= msg %></div>
+        <% end %>
+      </div>
+      <div class="text-field input-group">
+        <%= form.label :address_city %>
+        <%= form.text_field :address_city %>
+        <% @investor.errors.full_messages_for(:address_city).each do |msg| %>
+          <div class="alert"><%= msg %></div>
+        <% end %>
+      </div>
+      <div class="text-field input-group">
+        <%= form.label :address_state %>
+        <%= form.text_field :address_state %>
+        <% @investor.errors.full_messages_for(:address_state).each do |msg| %>
+          <div class="alert"><%= msg %></div>
+        <% end %>
+      </div>
+      <div class="text-field input-group">
+        <%= form.label :address_zipcode %>
+        <%= form.text_field :address_zipcode %>
+        <% @investor.errors.full_messages_for(:address_zipcode).each do |msg| %>
+          <div class="alert"><%= msg %></div>
+        <% end %>
+      </div>
+      <div class="submit-field buttons">
+        <%= form.submit 'OK', class: 'btn active' %>
+      </div>
+    <% end %>
+  </div>
+</div>
+You've currently imported <%= current_user.investors.count %> investors.
