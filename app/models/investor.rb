@@ -5,6 +5,11 @@ class Investor < ApplicationRecord
   ].freeze
 
   validates *REQUIRED_ATTRIBUTES, presence: true
+  validates :social_security_number, uniqueness: true
 
   belongs_to :user, inverse_of: 'investors'
+
+  def full_name
+    "#{first_name} #{last_name}"
+  end
 end

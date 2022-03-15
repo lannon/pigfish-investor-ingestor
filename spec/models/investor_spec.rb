@@ -11,6 +11,7 @@ RSpec.describe Investor, type: :model do
     it { should validate_presence_of(:last_name) }
     it { should validate_presence_of(:phone_number) }
     it { should validate_presence_of(:social_security_number) }
+    it { should validate_uniqueness_of(:social_security_number) }
   end
   describe 'associations' do
     it { should belong_to(:user) }
