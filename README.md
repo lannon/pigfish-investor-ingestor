@@ -45,4 +45,6 @@ and add investors. Given more time, I'd like to accomplish the following:
 * An onboarding workflow for users/partners to allow for internal vetting of
   users such that a random party with a URL can't start filling the
   disk with nonsense
+* Better validation of investor inputs, e.g., phone number and address
+  validation and basic formatting of social security numbers
 * While it's highly unlikely, it's possible that the UI could use some polish
