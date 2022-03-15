@@ -11,7 +11,7 @@ interface.
 * RubyGems packaging system
 
 ### Configuration
-Run bin/setup to install runtime dependencies:
+Run `bin/setup` to install runtime dependencies:
 * Installs bundler for gem dependency management
 * Uses bundler to install required gems
 * Prepares SQLite database
