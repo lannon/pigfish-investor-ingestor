@@ -30,4 +30,6 @@ FileUtils.chdir APP_ROOT do
 
   puts "\n== Restarting application server =="
   system! "bin/rails restart"
+
+  puts "\n== Run bin/rails server to start the web server=="
 end
