@@ -72,6 +72,13 @@
           <div class="alert"><%= msg %></div>
         <% end %>
       </div>
+      <div class="text-field input-group">
+        <%= form.label :document %>
+        <%= form.file_field :document%>
+        <% @investor.errors.full_messages_for(:document).each do |msg| %>
+          <div class="alert"><%= msg %></div>
+        <% end %>
+      </div>
       <div class="submit-field buttons">
         <%= form.submit 'OK', class: 'btn active' %>
       </div>
